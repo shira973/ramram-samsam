@@ -36,7 +36,8 @@ class SideScrollingAdventure(MovingCameraScene):
         body = Circle(radius=0.3, color=YELLOW, fill_color=YELLOW, fill_opacity=1)
         eye1 = Dot(color=BLACK).scale(0.8).move_to(body.get_center() + UP*0.1 + RIGHT*0.1)
         eye2 = Dot(color=BLACK).scale(0.8).move_to(body.get_center() + UP*0.1 + RIGHT*0.25)
-        character = VGroup(body, eye1, eye2)
+        mouth = ArcBetweenPoints(start=body.get_center() + DOWN*0.1 + LEFT*0.05, end=body.get_center() + DOWN*0.1 + RIGHT*0.05, angle=-PI/6, color=BLACK)
+        character = VGroup(body, eye1, eye2, mouth)
         
         # Start character on the left edge of Scene 1
         character.move_to(bg1.get_left() + RIGHT * 0.8 + UP * 0.3)
